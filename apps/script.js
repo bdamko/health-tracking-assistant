@@ -38,3 +38,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Upload Page: Handle Analyse button (demo navigation)
+const analyseButton = document.getElementById('analyse-button');
+if (analyseButton) {
+    analyseButton.addEventListener('click', function() {
+        // In real app, process file here; for demo, navigate to results
+        window.location.href = 'results.html';
+    });
+}
+
+// Results Page: Handle Add to Dashboard button
+const addButton = document.querySelector('.add-to-dashboard');
+if (addButton) {
+    addButton.addEventListener('click', function() {
+        // In real app, update dashboard data; for demo, navigate back
+        window.location.href = 'hey.html';
+    });
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Navigation Bar (copied from original) -->
+        <nav class="top-nav">
+            <div class="left-nav">
+                <i class="fas fa-bars hamburger"></i>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for patient name or UID">
+                </div>
+            </div>
+            <div class="right-nav">
+                <i class="fas fa-bell notification"></i>
+                <div class="profile">
+                    <img src="https://via.placeholder.com/40" alt="Dr. Steve Vai">
+                    <span>Dr. Steve Vai</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="logo">
+                    <i class="fas fa-apple-alt"></i> <!-- Placeholder for pineapple logo -->
+                </div>
+            </div>
+        </nav>
+
+        <!-- Left Sidebar (copied from original, with upload active) -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="hey.html"><i class="fas fa-users"></i></a></li>
+                <li><i class="fas fa-comment-dots"></i></li>
+                <li class="active"><i class="fas fa-upload"></i></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content: Upload Interface -->
+        <main class="main-content">
+            <section class="upload-section">
+                <h2>UPLOAD A FILE FOR ANALYSIS</h2>
+                <div class="upload-card">
+                    <input type="file" id="file-upload" accept=".pdf,.jpg,.png">
+                    <label for="file-upload" class="upload-button">Upload a file</label>
+                    <button id="analyse-button" class="analyse">Analyse</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
