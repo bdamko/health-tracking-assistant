@@ -8,16 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
             labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
             datasets: [
                 {
-                    label: 'Systolic',
-                    data: [110, 105, 100, 95, 90, 85, 80],
+                    label: 'Hemoglobin',
+                    data: [11, 13, 15, 17, 16, 16, 14],
                     borderColor: '#FF4500',
-                    tension: 0.4,
-                    fill: false
-                },
-                {
-                    label: 'Diastolic',
-                    data: [75, 72, 70, 68, 65, 72, 70],
-                    borderColor: '#FFA500',
                     tension: 0.4,
                     fill: false
                 }
@@ -27,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
             responsive: true,
             scales: {
                 y: {
-                    min: 40,
-                    max: 120
+                    min: 0,
+                    max: 20
                 }
             },
             plugins: {
@@ -47,15 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
             labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
             datasets: [
                 {
-                    label: 'Systolic',
-                    data: [115, 108, 102, 98, 92, 87, 82], // Different data for distinction
-                    borderColor: '#FF4500',
-                    tension: 0.4,
-                    fill: false
-                },
-                {
-                    label: 'Diastolic',
-                    data: [78, 74, 71, 69, 66, 73, 71], // Different data for distinction
+                    label: 'Hematocrit',
+                    data: [39, 42, 42, 45, 41, 40, 38], // Different data for distinction
                     borderColor: '#FFA500',
                     tension: 0.4,
                     fill: false
@@ -66,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
             responsive: true,
             scales: {
                 y: {
-                    min: 40,
-                    max: 120
+                    min: 0,
+                    max: 50
                 }
             },
             plugins: {
@@ -88,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const uploadedImage = document.getElementById('uploaded-image');
     if (analyseButton) {
         // Initially disable the analyse button
-        analyseButton.disabled = false;
+        analyseButton.disabled = true;
 
         analyseButton.addEventListener('click', function() {
             if (!fileUpload.files.length) {

@@ -222,7 +222,22 @@ h2 {
     font-size: 16px;
 }
 
+.current-bp2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #FFA500;
+    font-size: 16px;
+}
+
+
 .current-bp small {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.current-bp2 small {
     display: block;
     font-size: 12px;
     color: #aaa;
@@ -473,8 +488,7 @@ width: 50px; /* Adjust this value as needed */
     background: #28A745;
     color: white;
     padding: 15px 30px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 20px;
 }
