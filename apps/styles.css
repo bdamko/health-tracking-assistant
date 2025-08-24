@@ -150,32 +150,6 @@ h2 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.vital-item {
-    text-align: center;
-}
-
-.vital-item span {
-    display: block;
-    font-size: 12px;
-}
-
-.vital-item p {
-    font-size: 24px;
-    margin: 5px 0;
-}
-
-.vital-item small {
-    font-size: 12px;
-    color: #aaa;
-}
-
-.blood-pressure {
-    background: #28A745;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
-
 .graph {
     background: white;
     width: 500px;
@@ -472,6 +446,14 @@ width: 50px; /* Adjust this value as needed */
 /* Add this to styles.css to style the uploaded image and error message */
 #uploaded-image img {
     border: 1px solid #ddd;
+}
+
+.uploaded-card {
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    text-align:center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .upload-button {

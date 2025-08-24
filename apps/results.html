@@ -37,9 +37,9 @@
         <main class="main-content">
             <section class="upload-section">
                 <h2>UPLOAD A FILE FOR ANALYSIS</h2>
-                <div class="uploaded-card">
+                <div class="upload-card">
                     <input type="file" id="file-upload" accept=".pdf,.jpg,.png">
-                    <img src="report.png" alt="Uploaded report">
+                    <div id="uploaded-image" style="display: none;"></div>
                 </div>
             </section>
             
@@ -59,6 +59,7 @@
                             <li>Red blood cells(RBC) = 4.1*10^12L</li>
                         </ul>
                     </div>
+                    <div id="uploaded-image" style="display: none;"></div> <!-- Add this line -->
                     <button class="add-to-dashboard">Add to the dashboard</button>
                 </div>
             </section>

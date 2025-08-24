@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const uploadedImage = document.getElementById('uploaded-image');
     if (analyseButton) {
         // Initially disable the analyse button
-        analyseButton.disabled = true;
+        analyseButton.disabled = false;
 
         analyseButton.addEventListener('click', function() {
             if (!fileUpload.files.length) {
@@ -86,6 +86,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'results.html';
             }
         });
+    }
+
+    if (uploadedImage) {
+        const storedFile = localStorage.getItem('uploadedFile');
+        if (storedFile) {
+            if (storedFile.startsWith('data:image/')) {
+                uploadedImage.innerHTML = `<img src="${storedFile}" style="max-width: 200px; max-height: 200px; border-radius: 10px;">`;
+            } else if (storedFile.startsWith('data:application/pdf')) {
+                uploadedImage.innerHTML = `<embed src="${storedFile}" type="application/pdf" style="width: 200px; height: 200px;">`;
+            }
+            uploadedImage.style.display = 'block';
+        }
     }
 
     // Results Page: Handle Add to Dashboard Button
@@ -107,16 +119,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Display image if it's an image file
                 const file = fileUpload.files[0];
-                if (file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        uploadedImage.innerHTML = `<img src="${e.target.result}" style="max-width: 200px; max-height: 200px; border-radius: 10px;">`;
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const fileData = e.target.result;
+                    if (file.type.startsWith('image/')) {
+                        uploadedImage.innerHTML = `<img src="${fileData}" style="max-width: 200px; max-height: 200px; border-radius: 10px;">`;
                         uploadedImage.style.display = 'block';
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    uploadedImage.style.display = 'none'; // Hide image div for non-image files
-                }
+                        localStorage.setItem('uploadedFile', fileData); // Store for results page
+                    } else if (file.type === 'application/pdf') {
+                        uploadedImage.innerHTML = `<embed src="${fileData}" type="application/pdf" style="width: 200px; height: 200px;">`;
+                        uploadedImage.style.display = 'block';
+                        localStorage.setItem('uploadedFile', fileData); // Store for results page
+                    } else {
+                        uploadedImage.innerHTML = `<p>File type not supported for preview. Content: ${fileData.substring(0, 50)}...</p>`;
+                        uploadedImage.style.display = 'block';
+                    }
+                };
+                reader.readAsDataURL(file);
             }
         });
     }
